@@ -1,8 +1,12 @@
 import Header from "../components/header";
-function HomePage() {
-    return <div>
+
+function CV() {
+    return <div className="container">
         <Header />
-      My CV</div>;
+        <div>
+        My CV
+        </div>
+      </div>;
 }
 
-export default HomePage;
+export default CV;

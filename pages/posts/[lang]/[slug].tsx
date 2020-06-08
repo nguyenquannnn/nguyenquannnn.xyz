@@ -1,6 +1,7 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import Header from '../../../components/header';
+import Footer from '../../../components/footer';
 import Tags from '../../../components/tags';
 import { getAllPosts, getPostBySlug, PostMetadata } from '../../../lib/api';
 import { processSlug } from '../../../lib/frontutil';
@@ -8,7 +9,7 @@ import markdownToHtml from '../../../lib/markdownToHtml';
 
 const Return = () => {
     const router = useRouter()
-    return (<span onClick={() => router.back()}>return</span>)
+    return (<span className="cursor-pointer" onClick={() => router.back()}>return</span>)
 }
 
 const Post = ({ post }: { post: PostMetadata }) => {
@@ -16,27 +17,27 @@ const Post = ({ post }: { post: PostMetadata }) => {
     if (!router.isFallback && !post?.slug) {
         return <ErrorPage statusCode={404} />
     }
-    return (<div className="antialiased text-gray-900">
-        <h1 className="font-bold text-3xl py-5">{post.title}</h1>
+    return (<article className="antialiased text-gray-900">
+        <h1 className="font-bold text-5xl py-5">{post.title}</h1>
         <div className="flex">
             <Tags tags={post.tags} />
             <span className="ml-auto my-auto" >{post.date}</span>
         </div>
         <div className="text-justify text-lg" dangerouslySetInnerHTML={{ __html: String(post.content) }} />
-    </div>)
+    </article>)
 }
 
 const Article = ({ post }) => {
-    return (<div>
+    return (<div className="container">
         <Header />
-        <div className="container w-6/12">
+        <div className="mx-auto my-10 w-4/5">
             <Return />
             <Post post={post} />
         </div>
+        <Footer />
     </div>)
 }
 export async function getStaticProps({ params }) {
-    console.log('wtf', params)
     const post = getPostBySlug(params,
         ['title', 'content', 'slug', 'tags', 'date'])
     const content = await markdownToHtml(post.content || '')

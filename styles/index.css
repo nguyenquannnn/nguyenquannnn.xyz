@@ -64,3 +64,17 @@
 .h-78 {
   height: 20rem;
 }
+
+article p {
+    margin: 1rem 0;
+    font-size: larger;
+}
+
+article h2 {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+/* article p:first-of-type::first-letter {
+    font-size: xx-large;
+} */
