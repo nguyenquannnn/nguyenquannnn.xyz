@@ -13,7 +13,7 @@ const Card: FC<PostProps> = (props) => {
     Router.push(props.slug);
   };
   return (
-    <div className="mb-10 cursor-pointer">
+    <div className="mb-10 cursor-pointer bg-white">
       <div
         className="transition-all rounded shadow-lg p-5 hover:p-10 ease-in-out duration-700 delay-75"
         onClick={onPostClick}

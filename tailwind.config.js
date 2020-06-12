@@ -29,6 +29,9 @@ module.exports = {
         white: "#FFFCF9",
         black: "#2B2D42",
       },
+      zIndex: {
+        '-10': '-10',
+      }
     },
   },
   variants: {
