@@ -1,23 +1,37 @@
 ---
-title: "Learn How to Pre-render Pages Using Static Generation with Next.js"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus."
+title: "Hello, World! 3 Reasons Why I Started My Own Blog from Scratch and Why You Should Too?"
+excerpt: "TBD"
 coverImage: "/assets/blog/hello-world/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
+date: "2020-06-21T15:35:00-4:00"
 author:
-  name: Tim Neutkens
-  picture: "/assets/blog/authors/tim.jpeg"
+  name: Quan Nguyen
+  picture: ""
 ogImage:
-  url: "/assets/blog/hello-world/cover.jpg"
+  url: ""
 tags:
-  - React
-  - Web Development
-  - Javascript
+  - Introduction
+  - Writting
+  - Blogging
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+> There is no greater agony than bearing an untold story inside you.
+> - Maya Angelou, I Know Why the Caged Bird Sings
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+As a recent grad and a newly employed member of the tech workforce, one of the things I missed the most about my college study was the English/Art Philosophy classes. Beside my technical curriculum, these classes are much enjoyable and memorable for me because they challenged my critical thinking skill, not only by teaching me about the importance of doing thought exercises but also by forcing me to write more. Coming from the Vietnamese schooling system, where I spent my primary and middle school years struggling with studying by heart pre-written analysis to spit them out later onto the Literature test paper, I never thought I could get into writing essays and explaining my ideas in the fancy, elaborated medium of words, sentences, and paragraphs. (I would tell you more about my experience with Vietnamese schooling another time).
 
-## Lorem Ipsum
+I am grateful that many of my college teachers encourage us and are supportive of us exploring our thesis/ our takes on a subject. For the first time in many years, I finally loved writing and researching because it allows me to organize my thoughts and present them to a wider audience. I finally saw the tremendous benefits of writing, and with a new surge time to fill after graduation, I decided to start building my blog from scratch.  
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+## Why should you start building your blog from scratch?
+> Developing your personal brand is key to monetizing your passion online.
+> - Gary Vaynerchuk, Crush It!: Why Now Is the Time to Cash In on Your Passion
+
+In this age of the Internet, where "content is king" as GaryVee often says, blogging is a medium that anyone can get onto, that will give you a lot of value in return:
+
+1. Blogging forces you to practice your writing. As a developer, I find that this is an extremely underrated skill in my everyday setting. From drafting a clear description of my code changes for others to review onto formulating design documents to composing a concise and professional email with proper reviewing/editing, writing is a first-class skill that everyone should strive to master. Blogging allows you to be freer in your language, thus, in a way it is a perfect stepping ground to practice. 
+
+2. As a Developer or someone looking for a job in the tech field, building your website can serve as a rather convincing portfolio to prove your skills. There is a wide variety of skills and technology you need to learn to build your blogs and running it. From web architecture to web hosting to designing to analyzing, etc, you will have to dabble into all aspects of the technology stacks to get a website up and running.  For example, I built this blog leveraging NextJS because I want to showcase my React knowledge on the frontend. I also want to try my hand on designing a modern looking website that's accessible and responsive. NextJS also allows me to set up a Server-Side Rendering platform that can serve content fast and efficiently. I strongly recommend you look into this framework if you want to start developing.
+
+3. By having a blog, you will have a medium where you are allowed to build your brand organically. You can refine your image bases on your interests and from it, build an audience who shares the same fascination. More important, at the end of the day, it is your content and it is up to you to drive and grow it into the vision that you desire while providing valuable insights/entertainment for the reader. For me, my blog will be focusing not only on technology but all so on how to navigate/ make sense of my current world view. 
+
+Of course, blogging is a habit and it might take a while to get started. For me, the above three reasons are the biggest benefits that drove me to start this. Hopefully, this will help to motivate you to start your blogging journey!
+

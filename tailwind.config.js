@@ -13,12 +13,14 @@ module.exports = {
     },
     textColor: {
       black: "#2B2D42",
-      primary: "#41E2BA"
+      primary: "#41E2BA",
+      white: "#FFFCF9",
       // secondary: "#ffed4a",
       // danger: "#e3342f",
     },
     borderColor: {
       black: "#2B2D42",
+      primary: "#41E2BA",
     },
     extend: {
       fontFamily: {
@@ -28,6 +30,7 @@ module.exports = {
       colors: {
         white: "#FFFCF9",
         black: "#2B2D42",
+        primary: "#41E2BA",
       },
       zIndex: {
         '-10': '-10',

@@ -29,7 +29,7 @@ const Post = ({ post }: { post: PostMetadata }) => {
 
 const Article = ({ post }) => {
     return (<div className="container">
-        <Header />
+        <Header textColor="black"/>
         <div className="mx-auto my-10 w-4/5">
             <Return />
             <Post post={post} />

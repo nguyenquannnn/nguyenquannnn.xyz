@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="pb-10 border-t-2">
+    <footer className="pb-10 border-t-2 text-black">
       <div className="grid gap-1 grid-cols-2 mt-5">
-        <div className="col-start-1 col-end-2 ">
-          <a href="/">A site from quann</a>
+        <div className="col-start-1 col-end-2 text-sm">
+          <a href="/">@nguyenquannnn</a>
           <h6>All right reserved</h6>
         </div>
         <div className="col-start-2 col-end-3 inline-flex flex-row-reverse">

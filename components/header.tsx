@@ -1,16 +1,61 @@
-import Link from 'next/link';
+import Link from 'next-translate/Link'
+import useTranslation from 'next-translate/useTranslation'
+import i18nConfig from '../i18n.json'
+ 
+const { allLanguages } = i18nConfig
 
-export default () => {
-    return <header className="flex flex-row items-baseline font-sans inline-block my-5">
-        {/* <div> */}
-        <a className="mr-5 lg:text-2xl xl:text-3xl font-bold">nguyenquannnn.xyz</a>
-        <nav>
-            <ul className="inline-flex space-x-4 lg:text-lg xl:text-xl">
-                <li className="flex-1 hover:border-b-4 transition-all duration-200 ease-in-out"><Link href="/"><a>blog</a></Link></li>
-                <li className="flex-1 hover:border-b-4 transition-all duration-200 ease-in-out"><Link href="/cv"><a>cv</a></Link></li>
-                <li className="flex-2 hover:border-b-4 transition-all duration-200 ease-in-out"><Link href="/contact-me"><a>contact me</a></Link></li>
-            </ul>
-        </nav>
-        {/* </div> */}
+const LanguageSwitcher = () => {
+  const { t, lang } = useTranslation()
+  return (
+    <div className="text-xl">
+      {allLanguages.map((value, idx) => {
+        return [
+          <Link href="/" lang={value} key={value}>
+            <span className={`${
+              value === lang ? "underline" : "no-underline"
+            } cursor-pointer`}>{value}</span>
+          </Link>,
+          <span className="cursor-default">{idx < 2 ? " | " : ""}</span>,
+        ];
+      })}
+    </div>
+  );
+};
+
+export default (props: { textColor?: string } = { textColor: "white" }) => {
+  let textColor = `text-${props.textColor}`;
+  const { t, lang } = useTranslation()
+  return (
+    <header
+      className={`flex flex-row items-baseline font-sans inline-block my-5 ${textColor}`}
+    >
+      {/* <div> */}
+      <a className="mr-5 lg:text-2xl xl:text-3xl font-bold">
+        nguyenquannnn.xyz
+      </a>
+      <nav>
+        <ul className="inline-flex space-x-4 lg:text-lg xl:text-xl">
+          <li className="flex-1 hover:border-b-4 transition-all duration-200 ease-in-out">
+            <Link href="/">
+              <a>{t('common:blog')}</a>
+            </Link>
+          </li>
+          <li className="flex-1 hover:border-b-4 transition-all duration-200 ease-in-out">
+            <Link href="/cv">
+              <a>cv</a>
+            </Link>
+          </li>
+          <li className="flex-2 hover:border-b-4 transition-all duration-200 ease-in-out">
+            <Link href="/contact-me">
+              <a>{t('common:contact-me')}</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <div className="ml-auto">
+        <LanguageSwitcher />
+      </div>
+      {/* </div> */}
     </header>
-}
+  );
+};

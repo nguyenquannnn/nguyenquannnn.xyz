@@ -64,10 +64,15 @@
 .h-78 {
   height: 20rem;
 }
+/* 
+article p:first-of-type:first-letter {
+  font-size: xx-large;
+} */
 
 article p {
-    margin: 1rem 0;
+    margin: 2rem 0;
     font-size: larger;
+    line-height: 32px;
 }
 
 article h2 {
@@ -75,6 +80,27 @@ article h2 {
     font-weight: bold;
 }
 
+blockquote {
+  position: relative;
+  padding-left: 1em;
+  border-left: 0.2em solid;
+  border-left-color: #2B2D42;
+  font-weight: 300;
+  font-size: larger;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+blockquote p::before {
+  content: '\201C';
+  font-family: 'Sanchez';
+  color: #2B2D42;
+}
+blockquote p::after {
+  content: '\201D';
+  font-family: 'Sanchez';
+  color: #2B2D42;
+}
 /* article p:first-of-type::first-letter {
-    font-size: xx-large;
+    
 } */
