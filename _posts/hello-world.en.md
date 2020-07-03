@@ -1,5 +1,5 @@
 ---
-title: "Hello, World! 3 Reasons Why I Started My Own Blog from Scratch and Why You Should Too?"
+title: "Hello, World! 3 Reasons Why I Started My Own Blog from Scratch and Why You Should Too"
 excerpt: "TBD"
 coverImage: "/assets/blog/hello-world/cover.jpg"
 date: "2020-06-21T15:35:00-4:00"

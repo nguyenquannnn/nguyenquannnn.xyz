@@ -30,9 +30,11 @@ export default (props: { textColor?: string } = { textColor: "white" }) => {
       className={`flex flex-row items-baseline font-sans inline-block my-5 ${textColor}`}
     >
       {/* <div> */}
-      <a className="mr-5 lg:text-2xl xl:text-3xl font-bold">
-        nguyenquannnn.xyz
-      </a>
+      <Link href="/">
+        <a className="mr-5 lg:text-2xl xl:text-3xl font-bold">
+          nguyenquannnn.xyz
+        </a>
+      </Link>
       <nav>
         <ul className="inline-flex space-x-4 lg:text-lg xl:text-xl">
           <li className="flex-1 hover:border-b-4 transition-all duration-200 ease-in-out">
@@ -41,15 +43,15 @@ export default (props: { textColor?: string } = { textColor: "white" }) => {
             </Link>
           </li>
           <li className="flex-1 hover:border-b-4 transition-all duration-200 ease-in-out">
-            <Link href="/cv">
+            <a href="https://www.linkedin.com/in/anh-quan-nguyen-389a1b164/">
               <a>cv</a>
-            </Link>
+            </a>
           </li>
-          <li className="flex-2 hover:border-b-4 transition-all duration-200 ease-in-out">
+          {/* <li className="flex-2 hover:border-b-4 transition-all duration-200 ease-in-out">
             <Link href="/contact-me">
               <a>{t('common:contact-me')}</a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
       <div className="ml-auto">

@@ -7,6 +7,7 @@ import { getAllPosts } from "../lib/api";
 import { processSlug } from "../lib/frontutil";
 
 import {useTranslation} from 'next-translate'
+import ContactCard from "../components/contact-card";
 
 const WelcomeMessage = (props: { anim: Boolean }) => {
   const {t} = useTranslation()
@@ -28,7 +29,7 @@ const WelcomeMessage = (props: { anim: Boolean }) => {
   }, []);
   return (
     <h1
-      className={`text-5xl my-5 ${animate ? "swing-in-bottom-bck" : ""}`}
+      className={`text-5xl my-5 font-bold ${animate ? "swing-in-bottom-bck" : ""}`}
       onAnimationEnd={() => setAnimate(false)}
     >
       {messages[idx]}
@@ -37,6 +38,7 @@ const WelcomeMessage = (props: { anim: Boolean }) => {
 };
 
 const Banner = () => {
+  const {t} = useTranslation()
   return (
     <div className="my-24 flex text-white semibold">
       <div className="absolute top-0 left-0 min-w-full -z-10">
@@ -52,7 +54,7 @@ const Banner = () => {
       <div className="w-2/3">
         <WelcomeMessage anim={false} />
         <p className="text-xl">
-          I'm a software developer based in{" "}
+          {`${t("common:describe-me")} `}
           <a
             href="https://en.wikipedia.org/wiki/Montreal"
             className="text-2xl text-primary"
@@ -101,6 +103,9 @@ const HomePage = (props: { posts }) => {
       <Header textColor="white"/>
       <Banner />
       <Dashboard posts={props.posts} />
+      <div className="max-w-sm mx-auto mb-5 w-1/3">
+        <ContactCard/>
+      </div>
       <Footer />
     </div>
   );
