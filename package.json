@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/mongoose": "^5.7.31",
     "gray-matter": "^4.0.2",
+    "mongoose": "^5.9.23",
     "next": "^9.4.2",
     "next-translate": "^0.17.1",
     "react": "^16.13.1",
