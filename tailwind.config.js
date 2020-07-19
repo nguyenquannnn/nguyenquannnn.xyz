@@ -11,13 +11,6 @@ module.exports = {
       "3/4": "75%",
       "3/5": "60%",
     },
-    textColor: {
-      black: "#2B2D42",
-      primary: "#41E2BA",
-      white: "#FFFCF9",
-      // secondary: "#ffed4a",
-      // danger: "#e3342f",
-    },
     borderColor: {
       black: "#2B2D42",
       primary: "#41E2BA",
@@ -31,14 +24,30 @@ module.exports = {
         white: "#FFFCF9",
         black: "#2B2D42",
         primary: "#41E2BA",
+        onyx: "#313638",
+        alabaster: "#E0DFD5",
+      },
+      textColor: {
+        black: "#2B2D42",
+        primary: "#41E2BA",
+        white: "#FFFCF9",
+        alabaster: "#E0DFD5",
+        onyx: "#313638"
+        // secondary: "#ffed4a",
+        // danger: "#e3342f",
       },
       zIndex: {
         '-10': '-10',
+      },
+      backgroundColor: {
+        alabaster: "#E0DFD5",
+        onyx: "#313638"
       }
     },
   },
   variants: {
     text: ['responsive', 'hover'],
+    cursor: ['responsive', 'hover', 'focus'],
     borderWidth: ['responsive', 'hover', 'focus'],
     margin: ['responsive', 'hover', 'focus'],
     padding: ['responsive', 'hover', 'focus'],

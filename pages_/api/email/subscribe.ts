@@ -2,38 +2,50 @@ import { connectionFactory } from "../../../lib/db";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  function handleError(err: Error) {
+  function handleError(err) {
     res.statusCode = 500;
-    return res.json({ message: err.message });
+    return res.json({
+      error: { message: err.message, name: err.name, code: err.code },
+    });
   }
   switch (req.method) {
     case "POST":
       const connection = await connectionFactory();
       const Subscriber = connection.model("Subscriber");
-      console.log("HELLO")
-      let subscriber = new Subscriber({
-        firstName: req.body.firstName,
-        email: req.body.email,
-      });
-      console.log("HELLO2", subscriber)
+      Subscriber.findOne({ email: req.body.email }, null, (err, doc) => {
+        if (err) handleError(err);
+        else if (doc) {
+          doc.updateOne(
+            {
+              subscribing: true,
+            },
+            (err) => {
+              if (err) return handleError(err);
+              res.status(200).json({
+                message: "Success",
+              });
+            }
+          );
+        } else {
+          let subscriber = new Subscriber({
+            firstName: req.body.firstName,
+            email: req.body.email,
+          });
 
-      subscriber.save(function (err) {
-        if (err) return handleError(err);
-        console.log("Saved");
-        res.status(200).json({
-          "message": "Success"
-        })
+          subscriber.save((err) => {
+            if (err) return handleError(err);
+            res.status(200).json({
+              message: "Success",
+            });
+          });
+        }
       });
       break;
-    // case "GET":
-    //   // res.statusCode = 200;
-    //   // res.setHeader("Content-Type", "application/json");
-    //   // res.json({ result: "Welcome to my blog!" });
-
-    //   break;
     default:
       res.statusCode = 405;
-      res.setHeader("Allow", ["GET", "POST"]);
-      return res.json({ message: "Unsupported Method" });
+      res.setHeader("Allow", ["POST"]);
+      return res.json({
+        error: { message: "Unsupported Method", name: "Unsupported Method" },
+      });
   }
 };

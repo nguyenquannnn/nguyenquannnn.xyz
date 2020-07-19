@@ -4,12 +4,14 @@
   "description": "Personal CV site",
   "main": "index.js",
   "scripts": {
+    "debug": "NODE_OPTIONS='--inspect' npm run clean && next-translate && next dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next-translate && next dev",
-    "build": "next-translate && next build",
+    "clean": "npx rimraf pages", 
+    "dev": "npm run clean && next-translate && next dev",
+    "build": "npm run clean && next-translate && next build",
     "start": "next start"
   },
-  "author": "",
+  "author": "nguyenquannnn",
   "license": "ISC",
   "dependencies": {
     "@types/mongoose": "^5.7.31",
@@ -21,7 +23,8 @@
     "react-dom": "^16.13.1",
     "remark": "^12.0.0",
     "remark-highlight.js": "^6.0.0",
-    "remark-html": "^11.0.2"
+    "remark-html": "^11.0.2",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "postcss-flexbugs-fixes": "^4.2.1",

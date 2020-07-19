@@ -31,9 +31,9 @@ export default (props: { textColor?: string } = { textColor: "white" }) => {
     >
       {/* <div> */}
       <Link href="/">
-        <a className="mr-5 lg:text-2xl xl:text-3xl font-bold">
+        <span className="mr-5 lg:text-2xl xl:text-3xl font-bold">
           nguyenquannnn.xyz
-        </a>
+        </span>
       </Link>
       <nav>
         <ul className="inline-flex space-x-4 lg:text-lg xl:text-xl">
