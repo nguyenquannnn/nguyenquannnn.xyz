@@ -8,6 +8,7 @@ import { processSlug } from "../lib/frontutil";
 
 import { useTranslation } from "next-translate";
 import SubcribeCard from "../components/subcribe-card";
+import { isoStringToDate, calcReadTime } from "../lib/utilities";
 
 const WelcomeMessage = (props: { anim: Boolean }) => {
   const { t } = useTranslation();
@@ -82,10 +83,6 @@ const Banner = () => {
       <div className="w-1/2 -ml-20">
         <img src="/developer.svg" alt="Developer" />
       </div>
-      {/* <div className="rect absolute right-0">
-        <div className="w-64 h-78 bg-orange-300"></div>
-        <div className="w-64 h-78 bg-orange-500 -my-64 mx-16 "></div>
-      </div> */}
     </div>
   );
 };
@@ -107,6 +104,8 @@ const Dashboard = (props: { posts }) => {
               author={post.author}
               tags={post.tags}
               slug={`/posts/${lang}/${slug}`}
+              date={new Date(isoStringToDate(post.date))}
+              readtime={post.readtime}
             />
           );
         })}
@@ -161,15 +160,9 @@ const HomePage = (props: { posts }) => {
       <Banner />
       <Dashboard posts={props.posts} />
       <div className="flex max-w-sm mx-auto mb-5">
-        {/* <HoverAnim> */}
-          <SubcribeCard />
-        {/* </HoverAnim> */}
-        {/* <HoverAnim> */}
-          <AboutMeCard />
-        {/* </HoverAnim> */}
-        {/* <HoverAnim> */}
-          <ContactCard />
-        {/* </HoverAnim> */}
+        <SubcribeCard />
+        <AboutMeCard />
+        <ContactCard />
       </div>
       <Footer />
     </div>
@@ -177,13 +170,24 @@ const HomePage = (props: { posts }) => {
 };
 
 export async function getStaticProps() {
-  const posts = getAllPosts(["slug", "author", "title", "tags"]);
-  console.log(posts);
-  return {
+  const posts = getAllPosts([
+    "slug",
+    "author",
+    "title",
+    "tags",
+    "date",
+    "content",
+  ]);
+  const result = {
     props: {
-      posts,
+      posts: posts.map((post) => {
+        let {content, ...toReturn} = post;
+        return { ...toReturn, readtime: calcReadTime(String(post.content)) };
+      }),
     },
   };
+  console.log(result);
+  return result;
 }
 
 export default HomePage;

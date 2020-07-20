@@ -6,3 +6,9 @@ export enum Language {
   FRENCH = "fr",
 }
 
+export const dateDisplayOptions = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};

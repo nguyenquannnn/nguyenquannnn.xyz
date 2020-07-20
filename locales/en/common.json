@@ -4,5 +4,6 @@
     "location": "Montréal, Canada",
     "blog": "blog",
     "contact-me": "contact me",
-    "unsubscribe-email-success": "Email unsubscribed successfully!"
+    "unsubscribe-email-success": "Email unsubscribed successfully!",
+    "readtime": "{{duration}} min read"
 }

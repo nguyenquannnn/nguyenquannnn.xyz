@@ -70,7 +70,7 @@ const SubcribeCard = () => {
     );
   } else {
     return (
-      <div className="w-full max-w-sm bg-white shadow-xl rounded px-8 pt-6 pb-8 m-4 transition-all hover:p-10 hover:border-t-4 border-primary duration-700 delay-75 hover:cursor-pointer">
+      <div className="w-full max-w-sm bg-white shadow-xl rounded px-8 pt-6 pb-8 m-4 transition-all hover:p-10 hover:border-t-4 border-primary duration-700 delay-75 hover:cursor-pointer flex">
         <div className="inline-flex items-center mx-auto align-middle">
           <svg
             className="checkmark"
