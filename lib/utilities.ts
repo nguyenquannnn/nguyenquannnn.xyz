@@ -97,7 +97,7 @@ export function isoStringToDate(isoString: string): Date {
 }
 
 export function countWords(content: string): number {
-  return content.match(/\b\S+\b/g).length
+  return content.match(/\b\S+\b/g).length;
 }
 
 export function calcReadTime(content: string): number {
@@ -109,15 +109,21 @@ export function generateReadTimeMark(readtime: number) {
   const symbolMap = {
     5: "🍫",
     10: "☕",
-  }
-  let res = ""
+  };
+  let res = "";
   if (readtime > 25) {
-    for(let i = 0; i < (readtime % 10); i++) {
-      res += symbolMap[10]
-    } 
+    for (let i = 0; i < parseInt(String(readtime / 10)); i++) {
+      res += symbolMap[10];
+    }
+    if (res === "") {
+      res += symbolMap[10];
+    }
   } else {
-    for(let i = 0; i < (readtime % 5); i++) {
-      res += symbolMap[5]
+    for (let i = 0; i < parseInt(String(readtime / 5)); i++) {
+      res += symbolMap[5];
+    }
+    if (res === "") {
+      res += symbolMap[5];
     }
   }
   return res;
