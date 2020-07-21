@@ -1,5 +1,4 @@
 # TODO: Priority 1
-- [ ] Flow to access article in different language
 - [ ] Responsive styling accross platform
 - [ ] Google Analytic/ Free alternative
 - [ ] Host it!
@@ -10,5 +9,6 @@
 
 
 # Done
+- [X] Flow to access article in different language
 - [X] Setup DB for subscriber list / unsubscribe
 - [X] Minute Counter

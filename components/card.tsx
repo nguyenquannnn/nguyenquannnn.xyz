@@ -1,10 +1,10 @@
-import Router from "next/router";
 import { useTranslation } from "next-translate";
+import Router from "next/router";
+import { join } from 'path';
 import { FC } from "react";
-import Tags from "./tags";
 import { dateDisplayOptions } from "../lib/constants";
 import ReadTime from "./readtime";
-
+import Tags from "./tags";
 interface PostProps {
   title?: string;
   author?: string;
@@ -17,7 +17,7 @@ interface PostProps {
 const Card: FC<PostProps> = (props) => {
   const { lang } = useTranslation();
   const onPostClick = () => {
-    Router.push(props.slug);
+    Router.push(lang === 'en' ? props.slug : join('/', lang, props.slug))
   };
   return (
     <div className="mb-10 cursor-pointer bg-white">
