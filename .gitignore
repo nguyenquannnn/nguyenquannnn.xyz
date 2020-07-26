@@ -32,3 +32,4 @@ examples/**/.env*.local
 pr-stats.md
 
 pages
+dump

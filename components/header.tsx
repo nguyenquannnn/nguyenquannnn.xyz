@@ -12,9 +12,6 @@ const LanguageSwitcher = () => {
   const href = useMemo((
   ) => {
     let linkParts = router.asPath.split('/').filter(v => v);
-    console.log(router.pathname)
-    console.log(router)
-    console.log(linkParts)
     if (linkParts.length > 2 && ['vi', 'fr'].map(v => linkParts[0].indexOf(v) >= 0).some(Boolean)) {
       return '/' + linkParts.slice(1).join('/')
     } else if (linkParts.length > 2) {
@@ -25,7 +22,7 @@ const LanguageSwitcher = () => {
   }, [router.pathname]);
 
   return (
-    <div className="text-xl">
+    <div className="text-sm sm:text-md md:text-xl">
       {allLanguages.map((value, idx) => {
         return [
           <Link href={href} lang={value} key={value}>
@@ -33,7 +30,7 @@ const LanguageSwitcher = () => {
               value === lang ? "underline" : "no-underline"
               } cursor-pointer`}>{value}</span>
           </Link>,
-          <span className="cursor-default">{idx < 2 ? " | " : ""}</span>,
+          <span className="cursor-default" key={0}>{idx < 2 ? " | " : ""}</span>,
         ];
       })}
     </div>
@@ -49,12 +46,12 @@ export default (props: { textColor?: string } = { textColor: "white" }) => {
     >
       {/* <div> */}
       <Link href="/">
-        <span className="mr-5 lg:text-2xl xl:text-3xl font-bold hover:cursor-pointer">
+        <span className="mr-1 sm:text-md md:mr-5 md:text-2xl xl:text-3xl font-bold hover:cursor-pointer">
           nguyenquannnn.xyz
         </span>
       </Link>
       <nav>
-        <ul className="inline-flex space-x-4 lg:text-lg xl:text-xl ">
+        <ul className="inline-flex space-x-1 md:space-x-4 text-sm md:text-lg xl:text-xl ">
           <li className="flex-1 hover:border-b-4 transition-all duration-200 ease-in-out box-border">
             <Link href="/">
               <a>{t('common:blog')}</a>
@@ -62,7 +59,7 @@ export default (props: { textColor?: string } = { textColor: "white" }) => {
           </li>
           <li className="flex-1 hover:border-b-4 transition-all duration-200 ease-in-out">
             <a href="https://www.linkedin.com/in/anh-quan-nguyen-389a1b164/">
-              <a>cv</a>
+              cv
             </a>
           </li>
           {/* <li className="flex-2 hover:border-b-4 transition-all duration-200 ease-in-out">

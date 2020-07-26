@@ -32,7 +32,7 @@ module.exports = {
         primary: "#41E2BA",
         white: "#FFFCF9",
         alabaster: "#E0DFD5",
-        onyx: "#313638"
+        onyx: "#313638",
         // secondary: "#ffed4a",
         // danger: "#e3342f",
       },
@@ -41,7 +41,12 @@ module.exports = {
       },
       backgroundColor: {
         alabaster: "#E0DFD5",
-        onyx: "#313638"
+        onyx: "#313638",
+        bluebg: "#5398BE",
+      },
+      padding: {
+        28: "7rem",
+        36: "9rem"
       }
     },
   },

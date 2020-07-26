@@ -70,14 +70,27 @@ article p:first-of-type:first-letter {
 } */
 
 article p {
-    margin: 2rem 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-top: 2rem;
+    margin-bottom: -0.022rem;
     font-size: larger;
     line-height: 32px;
 }
 
 article h2 {
+    margin-top: 2rem;
     font-size: xx-large;
     font-weight: bold;
+}
+
+article h3 {
+  margin-top: 2rem;
+  font-size: x-large;
+  font-weight: bold;
 }
 
 blockquote {

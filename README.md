@@ -7,6 +7,8 @@
 - [ ] CV
 - [ ] Code snippet styling
 
+## TODO: Priority 3333
+- [ ] Progressive Web App ? (For what)
 
 # Done
 - [X] Flow to access article in different language

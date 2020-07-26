@@ -1,5 +1,6 @@
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
+import Link from 'next-translate/Link';
 import { useTranslation } from "next-translate";
 import Header from "../../../components/header";
 import Footer from "../../../components/footer";
@@ -8,7 +9,7 @@ import ReadTime from "../../../components/readtime";
 import { getAllPosts, getPostBySlug, PostMetadata } from "../../../lib/api";
 import { processSlug } from "../../../lib/frontutil";
 import markdownToHtml from "../../../lib/markdownToHtml";
-import { useEffect, useState, useMemo } from "react";
+import { useState } from "react";
 import {
   isoStringToDate,
   generateReadTimeMark,
@@ -17,11 +18,11 @@ import {
 import { dateDisplayOptions } from "../../../lib/constants";
 
 const Return = () => {
-  const router = useRouter();
+  const { lang } = useTranslation();
   return (
-    <span className="cursor-pointer" onClick={() => router.back()}>
+    <Link href="/" lang={lang}>
       return
-    </span>
+    </Link>
   );
 };
 
@@ -43,7 +44,7 @@ const Post = ({ post }: { post: PostMetadata }) => {
         </div>
       </div>
       <div
-        className="text-justify text-lg"
+        className="text-xl"
         dangerouslySetInnerHTML={{ __html: String(post.content) }}
       />
     </article>
