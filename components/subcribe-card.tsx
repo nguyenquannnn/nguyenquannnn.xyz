@@ -30,7 +30,7 @@ const SubcribeCard = () => {
   if (!subscribed) {
     return (
       <div
-        className="w-full max-w-sm bg-white shadow-xl rounded px-8 pt-6 pb-8 m-4 transition-all hover:p-10 hover:border-t-4 border-primary duration-700 delay-75 hover:cursor-pointer"
+        className="w-full max-w-sm bg-white shadow-xl rounded px-8 pt-6 pb-8 my-4 lg:m-4 transition-all hover:p-10 hover:border-t-4 border-primary duration-700 delay-75 hover:cursor-pointer"
         onMouseLeave={(e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -39,22 +39,22 @@ const SubcribeCard = () => {
         onClick={() => emailInput.current.focus()}
       >
         <form onSubmit={subscribe}>
-          <h4 className="text-lg font-bold my-1">
+          <h4 className="text-md sm:text-lg font-bold my-1">
             Interested in learning more?
           </h4>
-          <p className="text-md my-1">
+          <p className="text-sm sm:text-md my-1">
             Subscribe to get my latest content by email.
           </p>
           <div className="flex items-center border-b border-b-2 border-teal-500 py-2">
             <input
-              className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+              className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none text-sm"
               type="text"
               placeholder="Your email"
               aria-label="Email"
               ref={emailInput}
             />
             <button
-              className="font-bold flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+              className="font-bold flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-xs md:text-sm border-4 text-white py-1 px-2 rounded -ml-20 lg:-ml-10"
               type="submit"
             >
               Sign Up
@@ -90,7 +90,7 @@ const SubcribeCard = () => {
               d="M14.1 27.2l7.1 7.2 16.7-16.8"
             />
           </svg>
-          <h3 className="mx-3 text-3xl font-bold">
+          <h3 className="mx-3 text-xl sm:text-3xl font-bold">
             Thank you!
           </h3>
         </div>

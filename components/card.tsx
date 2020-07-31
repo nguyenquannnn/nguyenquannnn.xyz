@@ -25,13 +25,16 @@ const Card: FC<PostProps> = (props) => {
         className="transition-all rounded shadow-lg p-5 hover:p-10 hover:-mx-5 hover:border-t-4 border-primary duration-700 delay-75"
         onClick={onPostClick}
       >
-        <h4 className="font-bold text-lg hover:text-5xl duration-700 delay-75 transition-all">
+        <h4 className="font-bold text-md md:text-lg hover:text-5xl duration-700 delay-75 transition-all">
           {props.title}
         </h4>
-        <div className="flex items-center text-md">
+        <div className="flex-col-reverse flex md:flex-row md:items-center text-sm md:text-md">
           <Tags tags={props.tags} />
-          <div className="">
-            {props.date.toLocaleDateString(lang, dateDisplayOptions)} •{" "}
+          <div className="text-sm my-1 sm:block break-words">
+            <span>{props.date.toLocaleDateString(lang, dateDisplayOptions)}</span>
+            <span 
+            // className="hidden sm:inline"
+            > • </span>
             <ReadTime readtime={props.readtime} />
           </div>
         </div>
