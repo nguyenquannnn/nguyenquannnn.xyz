@@ -22,7 +22,7 @@ const Card: FC<PostProps> = (props) => {
   return (
     <div className="mb-10 cursor-pointer bg-white">
       <div
-        className="transition-all rounded shadow-lg p-5 hover:p-10 hover:-mx-5 hover:border-t-4 border-primary duration-700 delay-75"
+        className="transition-all rounded shadow-lg p-5 hover:p-10 hover:-mx-5 hover:-mb-10 hover:border-t-4 border-primary duration-700 delay-75"
         onClick={onPostClick}
       >
         <h4 className="font-bold text-md md:text-lg hover:text-5xl duration-700 delay-75 transition-all">

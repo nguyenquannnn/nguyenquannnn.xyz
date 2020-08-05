@@ -19,7 +19,7 @@ const SubcribeCard = () => {
       body: JSON.stringify({ email: emailInput.current.value }),
     });
     let resultJson = await result.json();
-    console.log(resultJson);
+    (resultJson);
     if (result.status == 200 && !("error" in resultJson)) {
       setSubscribed(true);
       setError(null);
@@ -30,7 +30,7 @@ const SubcribeCard = () => {
   if (!subscribed) {
     return (
       <div
-        className="w-full max-w-sm bg-white shadow-xl rounded px-8 pt-6 pb-8 my-4 lg:m-4 transition-all hover:p-10 hover:border-t-4 border-primary duration-700 delay-75 hover:cursor-pointer"
+        className="w-full max-w-sm bg-white shadow-xl rounded px-8 pt-6 pb-8 my-4 lg:m-8 transition-all hover:p-10 hover:border-t-4 hover:mb-2 border-primary duration-700 delay-75 hover:cursor-pointer"
         onMouseLeave={(e) => {
           e.preventDefault();
           e.stopPropagation();

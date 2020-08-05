@@ -32,7 +32,7 @@ const UnsubscribePage = (props: {}) => {
               body: JSON.stringify({ email: email }),
             });
             let resultJson = await result.json();
-            console.log(resultJson);
+            (resultJson);
             if (result.status == 200 && !("error" in resultJson)) {
               alert(t("common:unsubscribe-email-success"))
             } else if ("error" in resultJson) {

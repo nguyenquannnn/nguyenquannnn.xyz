@@ -27,7 +27,7 @@ const Return = () => {
 };
 
 const Post = ({ post }: { post: PostMetadata }) => {
-  const [date, setDate] = useState(new Date(isoStringToDate(post.date)));
+  const [date, setDate] = useState(new Date(isoStringToDate(String(post.date))));
   const { t, lang } = useTranslation();
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
@@ -35,14 +35,24 @@ const Post = ({ post }: { post: PostMetadata }) => {
   }
   return (
     <article className="antialiased text-gray-900">
-      <h1 className="font-bold text-5xl py-5">{post.title}</h1>
-      <div className="flex items-center text-xl">
+      <h1 className="font-bold text-2xl sm:text-3xl md:text-5xl py-5">{post.title}</h1>
+      <div className="flex-col-reverse flex md:flex-row md:items-center text-sm md:text-md">
+          <Tags tags={post.tags} />
+          <div className="text-sm my-1 sm:block break-words">
+            <span>{date.toLocaleDateString(lang, dateDisplayOptions)}</span>
+            <span 
+            // className="hidden sm:inline"
+            > • </span>
+            <ReadTime content={String(post.content)} />
+          </div>
+        </div>
+      {/* <div className="flex items-center text-xl">
         <Tags tags={post.tags} />
         <div className="">
           {date.toLocaleDateString(lang, dateDisplayOptions)} •{" "}
           <ReadTime content={String(post.content)} />
         </div>
-      </div>
+      </div> */}
       <div
         className="text-xl"
         dangerouslySetInnerHTML={{ __html: String(post.content) }}
@@ -53,9 +63,9 @@ const Post = ({ post }: { post: PostMetadata }) => {
 
 const Article = ({ post }) => {
   return (
-    <div className="container">
+    <div className="container px-4 mx-auto">
       <Header textColor="black" />
-      <div className="mx-auto my-10 w-4/5">
+      <div className="mx-auto my-10 w-10/12 md:w-4/5">
         <Return />
         <Post post={post} />
       </div>

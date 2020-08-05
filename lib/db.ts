@@ -18,7 +18,7 @@ async function initialize(): Promise<Mongoose.Connection> {
       reject(err);
     });
     db.once("open", function () {
-      console.log("Connection opened");
+      ("Connection opened");
       resolve(db);
     });
   });
@@ -60,7 +60,7 @@ subscriberSchema.methods.unsubscribe = function () {
 // }
 
 export async function connectionFactory(): Promise<Mongoose.Connection> {
-    console.log("DB CONNECTION", DB_CONNECTION)
+    ("DB CONNECTION", DB_CONNECTION)
   if (!DB_CONNECTION) {
     const conn = await initialize();
     Mongoose.connection.models = {};

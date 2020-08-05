@@ -4,7 +4,7 @@ import { join } from "path";
 const postDir = join(process.cwd(), "_posts");
 
 export interface PostMetadata {
-  date?: string;
+  date?: string | Date;
   slug?: string;
   content?: string | {};
   tags?: Array<string>;
