@@ -1,7 +1,4 @@
 # TODO: Priority 1
-- [ ] Responsive styling accross platform
-    - [X] HomePage
-    - [ ] Article Page
 - [ ] Google Analytic/ Free alternative
 - [ ] Host it! AWS vs BlueOcean vs Azure
 
@@ -17,3 +14,6 @@
 - [X] Flow to access article in different language
 - [X] Setup DB for subscriber list / unsubscribe
 - [X] Minute Counter
+- [X] Responsive styling accross platform
+    - [X] HomePage
+    - [X] Article Page
