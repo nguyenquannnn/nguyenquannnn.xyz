@@ -12,34 +12,29 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     case "POST":
       const connection = await connectionFactory();
       const Subscriber = connection.model("Subscriber");
-      Subscriber.findOne({ email: req.body.email }, null, (err, doc) => {
-        if (err) handleError(err);
-        else if (doc) {
-          doc.updateOne(
-            {
-              subscribing: true,
-            },
-            (err) => {
-              if (err) return handleError(err);
-              res.status(200).json({
-                message: "Success",
-              });
-            }
-          );
+      try {
+        const doc = await Subscriber.findOne({ email: req.body.email }, null);
+        if (doc) {
+          await doc.updateOne({
+            subscribing: true,
+          });
+          return res.status(200).json({
+            message: "Success",
+          });
         } else {
           let subscriber = new Subscriber({
             firstName: req.body.firstName,
             email: req.body.email,
           });
 
-          subscriber.save((err) => {
-            if (err) return handleError(err);
-            res.status(200).json({
-              message: "Success",
-            });
+          await subscriber.save();
+          return res.status(200).json({
+            message: "Success",
           });
         }
-      });
+      } catch (err) {
+        handleError(err);
+      }
       break;
     default:
       res.statusCode = 405;

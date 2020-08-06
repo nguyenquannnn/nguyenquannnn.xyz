@@ -6,7 +6,7 @@
   "scripts": {
     "debug": "NODE_OPTIONS='--inspect' npm run clean && next-translate && next dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "npx rimraf pages/",
+    "clean": "npx rimraf pages/*",
     "dev": "npm run clean && next-translate && next dev",
     "build": "npm run clean && next-translate && next build",
     "start": "next start"
