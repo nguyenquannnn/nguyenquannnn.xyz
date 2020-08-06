@@ -1,4 +1,4 @@
 {
-    "11000": "Email address is already registered!",
-    "11500": "The provided email address is not registered in the email list!"
+    "11000": "Cette adresse de courriel a déjà été inscrite!",
+    "11500": "L'address de courriel fournie n'existe pas dans mon système!"
 }

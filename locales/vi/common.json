@@ -1,7 +1,12 @@
 {
     "welcome": "Xin chào!",
+    "describe-me": "Mình là một software developer đang làm việc ở",
+    "location": "Montréal, Canada",
     "blog": "blog",
     "contact-me": "liên lạc",
-    "location": "Montréal, Canada",
-    "describe-me": "Mình là một software developer đang làm việc ở"
+    "unsubscribe-email-success": "Email đã được loại khỏi danh sách theo dõi!",
+    "readtime": "{{duration}} phút",
+    "check-out-posts": "Xem những bài viết mới nhất",
+    "more-info": "Thêm thống tin"
+
 }

@@ -1,7 +1,11 @@
 {
     "welcome": "Bienvenue!",
-    "blog": "blog",
-    "contact-me": "contacté moi",
     "describe-me": "Je me situé à",
     "location": "Montréal, Canada",
+    "blog": "blog",
+    "contact-me": "contacté moi",
+    "unsubscribe-email-success": "Le courriel s'est désinscrit",
+    "readtime": "{{duration}} min",
+    "check-out-posts": "Voyez mes plus récents articles",
+    "more-info": "Plus d'information"
 }
