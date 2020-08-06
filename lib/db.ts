@@ -1,7 +1,7 @@
 import Mongoose from "mongoose";
 import { checkEmail } from "./utilities";
 
-const CONNECTION_URL = "mongodb://localhost/27017";
+const CONNECTION_URL = process.env.CONNECTION_URL || "mongodb://localhost/27017";
 let DB_CONNECTION = undefined;
 
 async function initialize(): Promise<Mongoose.Connection> {
@@ -60,7 +60,6 @@ subscriberSchema.methods.unsubscribe = function () {
 // }
 
 export async function connectionFactory(): Promise<Mongoose.Connection> {
-    ("DB CONNECTION", DB_CONNECTION)
   if (!DB_CONNECTION) {
     const conn = await initialize();
     Mongoose.connection.models = {};
