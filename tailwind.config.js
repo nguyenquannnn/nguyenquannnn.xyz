@@ -1,6 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-module.exports = {
-  purge: ["./components/**/*.[jt]sx?", "./pages/**/*.[jt]sx?"],
+module.exports = { 
+  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}', './pages_/**/*.{js,ts,jsx,tsx}'],
+  
   theme: {
     container: {
       center: true,
@@ -42,7 +43,7 @@ module.exports = {
       backgroundColor: {
         alabaster: "#E0DFD5",
         onyx: "#313638",
-        bluebg: "#5398BE",
+        oceanblue: "#5398BE",
       },
       padding: {
         28: "7rem",

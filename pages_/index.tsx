@@ -45,7 +45,7 @@ const Banner = () => {
   return (
     <div className="my-20 sm:my-28 flex text-white semibold">
       <div className="absolute top-0 left-0 min-w-full -z-10 min-h-screen">
-        <div className="bg-bluebg p-28 md:p-36 lg:p-36"></div>
+        <div className="bg-oceanblue p-28 md:p-36 lg:p-36"></div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500">
           {/* <path fill="#FFD166" fill-opacity="1" d="M0,128L34.3,117.3C68.6,107,137,85,206,
         112C274.3,139,343,213,411,256C480,299,549,309,617,298.7C685.7,288,754,256,823,202.7C891.4,149,960,75,1029,64C1097.1,53,1166,107,1234,160C1302.9,213,1371,267,1406,293.3L1440,320L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path> */}

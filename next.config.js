@@ -22,5 +22,6 @@ module.exports = (phase, { defaultConfig }) => {
 
   return {
     /* config options for all phases here */
+    "helloworld": "helloworld"
   }
 }
