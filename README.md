@@ -1,8 +1,8 @@
 # TODO: Priority 1
 - [ ] Google Analytic/ Free alternative
-- [ ] Host it! AWS vs BlueOcean vs Azure
 
 ## TODO: Priority 2
+- [ ] Add missing translation
 - [ ] CV
 - [ ] Code snippet styling
 
@@ -11,9 +11,10 @@
 - [ ] Notification
 
 # Done
-- [X] Flow to access article in different language
-- [X] Setup DB for subscriber list / unsubscribe
-- [X] Minute Counter
+- [X] Host it! -> Vercel + Mongodb Atlas
 - [X] Responsive styling accross platform
     - [X] HomePage
     - [X] Article Page
+- [X] Minute Counter
+- [X] Setup DB for subscriber list / unsubscribe
+- [X] Flow to access article in different language

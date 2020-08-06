@@ -1,7 +1,11 @@
 import Mongoose from "mongoose";
 import { checkEmail } from "./utilities";
 
-const CONNECTION_URL = process.env.CONNECTION_URL || "mongodb://localhost/27017";
+const CONNECTION_URL =
+  process.env.CONNECTION_URL.replace("{USER}", process.env.USER)
+    .replace("{DB_NAME}", process.env.DB_NAME)
+    .replace("{DB_PASSWORD}", encodeURIComponent(process.env.DB_PASSWORD)) ||
+  "mongodb://localhost/27017";
 let DB_CONNECTION = undefined;
 
 async function initialize(): Promise<Mongoose.Connection> {
@@ -10,8 +14,8 @@ async function initialize(): Promise<Mongoose.Connection> {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    Mongoose.set('useCreateIndex', true);
-    Mongoose.set('useFindAndModify', false);
+    Mongoose.set("useCreateIndex", true);
+    Mongoose.set("useFindAndModify", false);
     const db = Mongoose.connection;
     db.on("error", (err) => {
       console.error("connection error:", err);
