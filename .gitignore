@@ -35,3 +35,6 @@ pages
 dump
 
 .env.local
+
+.vercel
+.env

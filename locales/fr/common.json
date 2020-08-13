@@ -7,5 +7,6 @@
     "unsubscribe-email-success": "Le courriel s'est désinscrit",
     "readtime": "{{duration}} min",
     "check-out-posts": "Voyez mes plus récents articles",
-    "more-info": "Plus d'information"
+    "more-info": "Plus d'information",
+    "subcribe-to-get-noti": "Subscribe to get notifications by email!"
 }

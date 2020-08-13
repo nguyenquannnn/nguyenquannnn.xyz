@@ -7,5 +7,6 @@
     "unsubscribe-email-success": "Email unsubscribed successfully!",
     "readtime": "{{duration}} min read",
     "check-out-posts": "Check out my latest posts",
-    "more-info": "More information"
+    "more-info": "More information",
+    "subcribe-to-get-noti": "Subscribe to get notifications by email."
 }

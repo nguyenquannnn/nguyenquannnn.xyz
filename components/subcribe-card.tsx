@@ -43,7 +43,7 @@ const SubcribeCard = () => {
             Interested in learning more?
           </h4>
           <p className="text-sm sm:text-md my-1">
-            Subscribe to get my latest content by email.
+            {t("common:subcribe-to-get-noti")}
           </p>
           <div className="flex items-center border-b border-b-2 border-teal-500 py-2">
             <input

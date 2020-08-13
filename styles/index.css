@@ -66,6 +66,15 @@
 .h-78 {
   height: 20rem;
 }
+
+.progress-bar {
+  padding-top: 8px;
+  background: #5398BE;
+  left: 0;
+  top: 0;
+  position: fixed;
+}
+
 /* 
 article p:first-of-type:first-letter {
   font-size: xx-large;

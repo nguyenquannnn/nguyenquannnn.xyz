@@ -9,7 +9,7 @@ import ReadTime from "../../../components/readtime";
 import { getAllPosts, getPostBySlug, PostMetadata } from "../../../lib/api";
 import { processSlug } from "../../../lib/frontutil";
 import markdownToHtml from "../../../lib/markdownToHtml";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   isoStringToDate,
   generateReadTimeMark,
@@ -25,6 +25,20 @@ const Return = () => {
     </Link>
   );
 };
+
+const ReadingProgressBar = () => {
+  const scrollHandler = (bar: HTMLElement) => () => {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    bar.style.width = scrolled + "%";
+  }
+  useEffect(() => {
+    const el = document.getElementById("progress-bar");
+    window.addEventListener("scroll", scrollHandler(el))
+  }, [])
+  return <div id="progress-bar" className="progress-bar"></div>
+}
 
 const Post = ({ post }: { post: PostMetadata }) => {
   const [date, setDate] = useState(new Date(isoStringToDate(String(post.date))));
@@ -64,6 +78,7 @@ const Post = ({ post }: { post: PostMetadata }) => {
 const Article = ({ post }) => {
   return (
     <div className="container px-4 mx-auto">
+      <ReadingProgressBar/>
       <Header textColor="black" />
       <div className="mx-auto my-10 w-10/12 md:w-4/5">
         <Return />
