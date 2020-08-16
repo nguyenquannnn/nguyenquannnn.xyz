@@ -9,6 +9,7 @@ export interface PostMetadata {
   content?: string | {};
   tags?: Array<string>;
   title?: string;
+  description?: string;
 }
 
 export function getPostSlugs() {

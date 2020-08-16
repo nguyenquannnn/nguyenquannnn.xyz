@@ -3,6 +3,7 @@ title: "Hello, World! 3 Reasons Why I Started My Own Blog from Scratch and Why Y
 excerpt: "TBD"
 coverImage: "/assets/blog/hello-world/cover.jpg"
 date: "2020-06-21T15:35:00-4:00"
+description: Blogging is one of the best habit everyone should be picking up today. As a developer, I have deceided to built my own blog from the scratch. Read on to find out why you should too!
 author:
   name: Quan Nguyen
   picture: ""

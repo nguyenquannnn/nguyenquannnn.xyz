@@ -13,6 +13,7 @@ import { dateDisplayOptions } from "../../../lib/constants";
 import { processSlug } from "../../../lib/frontutil";
 import markdownToHtml from "../../../lib/markdownToHtml";
 import { isoStringToDate } from "../../../lib/utilities";
+import MetaTags from "../../../components/meta-tags";
 const Return = () => {
   const { lang } = useTranslation();
   return (
@@ -71,13 +72,11 @@ const Post = ({ post }: { post: PostMetadata }) => {
   );
 };
 
-const Article = ({ post }) => {
+const Article = ({ post }: { post: PostMetadata }) => {
+  const router = useRouter()
   return (
     <div className="container px-4 mx-auto">
-      <Helmet>
-        <meta name="title" content="nguyenquannnn.xyz — My Personal Blog" />
-        <meta name="description" content="In a place for food thoughts, I write to make sense of the World." />
-      </Helmet>
+      <MetaTags description={post.description} url={router.asPath} title={post.title}/>
       <ReadingProgressBar />
       <Header textColor="black" />
       <div className="mx-auto my-10 w-10/12 md:w-4/5">
@@ -95,6 +94,7 @@ export async function getStaticProps({ params }) {
     "slug",
     "tags",
     "date",
+    "description"
   ]);
   const content = await markdownToHtml(post.content || "");
 
