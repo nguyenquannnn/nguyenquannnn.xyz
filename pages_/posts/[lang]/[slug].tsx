@@ -1,22 +1,18 @@
+import { useTranslation } from "next-translate";
+import Link from 'next-translate/Link';
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
-import Link from 'next-translate/Link';
-import { useTranslation } from "next-translate";
-import Header from "../../../components/header";
+import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import Footer from "../../../components/footer";
-import Tags from "../../../components/tags";
+import Header from "../../../components/header";
 import ReadTime from "../../../components/readtime";
+import Tags from "../../../components/tags";
 import { getAllPosts, getPostBySlug, PostMetadata } from "../../../lib/api";
+import { dateDisplayOptions } from "../../../lib/constants";
 import { processSlug } from "../../../lib/frontutil";
 import markdownToHtml from "../../../lib/markdownToHtml";
-import { useState, useEffect } from "react";
-import {
-  isoStringToDate,
-  generateReadTimeMark,
-  calcReadTime,
-} from "../../../lib/utilities";
-import { dateDisplayOptions } from "../../../lib/constants";
-
+import { isoStringToDate } from "../../../lib/utilities";
 const Return = () => {
   const { lang } = useTranslation();
   return (
@@ -51,15 +47,15 @@ const Post = ({ post }: { post: PostMetadata }) => {
     <article className="antialiased text-gray-900">
       <h1 className="font-bold text-2xl sm:text-3xl md:text-5xl py-5">{post.title}</h1>
       <div className="flex-col-reverse flex md:flex-row md:items-center text-sm md:text-md">
-          <Tags tags={post.tags} />
-          <div className="text-sm my-1 sm:block break-words">
-            <span>{date.toLocaleDateString(lang, dateDisplayOptions)}</span>
-            <span 
-            // className="hidden sm:inline"
-            > • </span>
-            <ReadTime content={String(post.content)} />
-          </div>
+        <Tags tags={post.tags} />
+        <div className="text-sm my-1 sm:block break-words">
+          <span>{date.toLocaleDateString(lang, dateDisplayOptions)}</span>
+          <span
+          // className="hidden sm:inline"
+          > • </span>
+          <ReadTime content={String(post.content)} />
         </div>
+      </div>
       {/* <div className="flex items-center text-xl">
         <Tags tags={post.tags} />
         <div className="">
@@ -78,7 +74,11 @@ const Post = ({ post }: { post: PostMetadata }) => {
 const Article = ({ post }) => {
   return (
     <div className="container px-4 mx-auto">
-      <ReadingProgressBar/>
+      <Helmet>
+        <meta name="title" content="nguyenquannnn.xyz — My Personal Blog" />
+        <meta name="description" content="In a place for food thoughts, I write to make sense of the World." />
+      </Helmet>
+      <ReadingProgressBar />
       <Header textColor="black" />
       <div className="mx-auto my-10 w-10/12 md:w-4/5">
         <Return />

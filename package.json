@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Personal CV site",
   "main": "index.js",
+  "repository": {
+    "url": "https://github.com/nguyenquannnn/nguyenquannnn.xyz"
+  },
   "scripts": {
     "debug": "NODE_OPTIONS='--inspect' npm run clean && next-translate && next dev",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,12 +18,14 @@
   "license": "ISC",
   "dependencies": {
     "@types/mongoose": "^5.7.31",
+    "@types/react-helmet": "^6.1.0",
     "gray-matter": "^4.0.2",
     "mongoose": "^5.9.23",
     "next": "^9.4.2",
     "next-translate": "^0.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "remark": "^12.0.0",
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^11.0.2",
