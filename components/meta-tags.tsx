@@ -36,12 +36,12 @@ const MetaTags = (props: {
         { property: "og:url", content: url },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
-        { property: "og:image", content: `${window.location.origin}/meta-bg.png` },
+        { property: "og:image", content: `https://nguyenquannnn.xyz/meta-bg.png` },
         { property: "twitter:card", content: "summary_large_image" },
         { property: "twitter:url", content: url },
         { property: "twitter:title", content: title },
         { property: "twitter:description", content: description },
-        { property: "twitter:image", content: `${window.location.origin}/meta-bg.png` },
+        { property: "twitter:image", content: `https://nguyenquannnn.xyz/meta-bg.png` },
       ]}
       link={[{ rel: "apple-touch-icon", href: "/logo/apple-touch-icon.png" }]}
     >

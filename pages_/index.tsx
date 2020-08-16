@@ -8,7 +8,7 @@ import { processSlug } from "../lib/frontutil";
 
 import { useTranslation } from "next-translate";
 import SubcribeCard from "../components/subcribe-card";
-import { isoStringToDate, calcReadTime } from "../lib/utilities";
+import { isoStringToDate, calcReadTime, absoluteUrl } from "../lib/utilities";
 import MetaTags from "../components/meta-tags";
 
 const WelcomeMessage = (props: { anim: Boolean }) => {
@@ -180,7 +180,7 @@ export async function getStaticProps() {
       posts: posts.map((post) => {
         let { content, ...toReturn } = post;
         return { ...toReturn, readtime: calcReadTime(String(post.content)) };
-      }),
+      })
     },
   };
   (result);
