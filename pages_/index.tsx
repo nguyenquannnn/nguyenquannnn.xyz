@@ -9,6 +9,7 @@ import { processSlug } from "../lib/frontutil";
 import { useTranslation } from "next-translate";
 import SubcribeCard from "../components/subcribe-card";
 import { isoStringToDate, calcReadTime } from "../lib/utilities";
+import MetaTags from "../components/meta-tags";
 
 const WelcomeMessage = (props: { anim: Boolean }) => {
   const { t } = useTranslation();
@@ -145,6 +146,7 @@ const HomePage = (props: { posts }) => {
   const { t } = useTranslation();
   return (
     <div className="container center mx-auto px-4">
+      <MetaTags/>
       <Header textColor="white" />
       <Banner />
       <Dashboard posts={props.posts} />

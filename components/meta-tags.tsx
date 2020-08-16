@@ -1,28 +1,33 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
-
+import { useTranslation } from "next-translate";
 const MetaTags = (props: {
   title?: string;
   description?: string;
   url?: string;
+  tags?: string[];
 }) => {
+  const { t, lang } = useTranslation()
   const [title, setTitle] = useState(
-    props.title || "nguyenquannnn.xyz — My Personal Blog"
+    props.title ||  t("common:meta-title")
   );
   const [description, setDescription] = useState(
-    props.description ||
-      "In a place for food thoughts, I write to make sense of the World."
+    props.description || t("common:meta-description")
   );
   const [url, setUrl] = useState(props.url || "https://nguyenquannnn.xyz");
+  const [tags, setTags]: [string, CallableFunction] = useState(
+    props.tags ? props.tags.join(", ") : t("common:meta-keywords")
+  );
   return (
     <Helmet
-      htmlAttributes={{ lang: "en" }}
+      htmlAttributes={{ lang: lang }}
       defaultTitle="nguyenquannnn.xyz"
       title={title}
       meta={[
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "title", content: title },
         { name: "description", content: description },
+        { name: "keywords", content: tags},
         { property: "og:type", content: "website" },
         { property: "og:url", content: url },
         { property: "og:title", content: title },
@@ -34,8 +39,9 @@ const MetaTags = (props: {
         { property: "twitter:description", content: description },
         { property: "twitter:image", content: "/meta-bg.png" },
       ]}
+      link={[{ rel: "apple-touch-icon", href: "/logo/apple-touch-icon.png" }]}
     >
-    <link rel="shortcut icon" href="/logo/favicon.ico" />
+      <link rel="shortcut icon" href="/logo/favicon.ico" />
     </Helmet>
   );
 };
