@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "next-translate";
+import { useRouter } from "next/router";
 const MetaTags = (props: {
   title?: string;
   description?: string;
   url?: string;
   tags?: string[];
 }) => {
+  const router = useRouter();
   const { t, lang } = useTranslation()
   const [title, setTitle] = useState(
     props.title ||  t("common:meta-title")
@@ -32,12 +34,12 @@ const MetaTags = (props: {
         { property: "og:url", content: url },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
-        { property: "og:image", content: "/meta-bg.png" },
+        { property: "og:image", content: `${router.basePath}/meta-bg.png` },
         { property: "twitter:card", content: "summary_large_image" },
         { property: "twitter:url", content: url },
         { property: "twitter:title", content: title },
         { property: "twitter:description", content: description },
-        { property: "twitter:image", content: "/meta-bg.png" },
+        { property: "twitter:image", content: `${router.basePath}/meta-bg.png` },
       ]}
       link={[{ rel: "apple-touch-icon", href: "/logo/apple-touch-icon.png" }]}
     >
