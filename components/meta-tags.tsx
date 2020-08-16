@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "next-translate";
 import { useRouter } from "next/router";
+
 const MetaTags = (props: {
   title?: string;
   description?: string;
@@ -20,6 +21,7 @@ const MetaTags = (props: {
   const [tags, setTags]: [string, CallableFunction] = useState(
     props.tags ? props.tags.join(", ") : t("common:meta-keywords")
   );
+
   return (
     <Helmet
       htmlAttributes={{ lang: lang }}
@@ -34,12 +36,12 @@ const MetaTags = (props: {
         { property: "og:url", content: url },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
-        { property: "og:image", content: `${router.basePath}/meta-bg.png` },
+        { property: "og:image", content: `${window.location.origin}/meta-bg.png` },
         { property: "twitter:card", content: "summary_large_image" },
         { property: "twitter:url", content: url },
         { property: "twitter:title", content: title },
         { property: "twitter:description", content: description },
-        { property: "twitter:image", content: `${router.basePath}/meta-bg.png` },
+        { property: "twitter:image", content: `${window.location.origin}/meta-bg.png` },
       ]}
       link={[{ rel: "apple-touch-icon", href: "/logo/apple-touch-icon.png" }]}
     >
